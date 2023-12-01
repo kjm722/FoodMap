@@ -1,0 +1,88 @@
+@charset "utf-8";
+*{
+    margin: 10;
+    padding: 10;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+
+}
+
+fieldset{
+    border:0;
+}
+table{
+    border-collapse: collapse;
+}
+caption{
+    position: absolute;
+    left:9999em;
+}
+body{
+    font:10px;
+    color: #333;
+
+}
+#join_wrap{
+    width: 610px;
+    margin:0 auto;
+
+}
+#join_wrap.title{
+    padding: 50px 0 20px;
+    font-size:2em;
+}
+.joinTable th, .joinTable td{
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+}
+.joinTable th{
+    text-align: center;
+    background-color: antiquewhite;
+    width: 620px;
+}
+.joinTable td{
+    width: 720px;
+}
+.joinTable.first{
+    border-top: 2px solid #333;
+}
+.joinTable.textForm{
+    width: 420px;
+    height: 42px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+/*중복확인버튼*/
+.joinTable.btn{
+    width: 80px;
+    height: 42px;
+    border: 0;
+    background-color: navy;
+    border-radius: 5px;
+    color: #fff;
+
+}
+.btn_area{
+    text-align: center;
+    margin: 30px 0;
+
+}
+.btn_area button{
+    width: 150px;
+    height: 60px;
+    margin: 0 10px;
+    border: 0;
+    font-size: 20px;
+}
+.btn_area .btn_join{
+    background-color: antiquewhite;
+    color: #000;
+}

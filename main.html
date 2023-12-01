@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BRACKETS 으로 시작하기</title>
+    <meta name="description" content="Brackets에 대한 대화식 시작 안내서입니다.">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+#mapwrap{position:relative;overflow:hidden;}
+.category, .category *{margin:0;padding:0;color:#000;}   
+.category {position:absolute;overflow:hidden;top:10px;left:10px;width:310px;height:50px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
+.category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} 
+.category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
+.category .ico_comm {display:block;margin:0 auto 2px;width:25px;height:26px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;} 
+.category .ico_jang {background-position:-10px 0;}  
+.category .ico_kor {background-position:-10px -36px;}   
+.category .ico_yang {background-position:-10px -72px;}
+.category .ico_chi {background-position:-10px -108;}  
+.category .ico_jan {background-position:-10px -144px;}   
+.category .ico_boon {background-position:-10px -180px;}
+.placeinfo_wrap {position:absolute;bottom:28px;left:-150px;width:300px;}
+.placeinfo {position:relative;width:100%;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;padding-bottom: 10px;background: #fff;}
+.placeinfo:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.placeinfo_wrap .after {content:'';position:relative;margin-left:-12px;left:50%;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.placeinfo a, .placeinfo a:hover, .placeinfo a:active{color:#fff;text-decoration: none;}
+.placeinfo a, .placeinfo span {display: block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.placeinfo span {margin:5px 5px 0 5px;cursor: default;font-size:13px;}
+.placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+.placeinfo .tel {color:#0f7833;}
+.placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 class="logo"><a href="main.html"><img src="logo.png" alt=""></a></h2>
+            <nav class="navbar">
+                <input type="checkbox" id="menuicon">
+                <label for="menuicon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="sidebar">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="list.html">Contact</a></li>
+                </div>
+                <!-- <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Service</a>
+                <a href="#">Contact</a> -->
+                
+            </nav>
+        </header>
+        <div id="mapwrap"> 
+            <!-- 지도가 표시될 div -->
+            <div id="map" style="width:100%;height:500px;"></div>
+            <!-- 지도 위에 표시될 마커 카테고리 -->
+            <div class="category">
+                <ul>
+                    <li id="JangMenu" onclick="changeMarker('Jang')">
+                        장애편의
+                    </li>
+                    <li id="KorMenu" onclick="changeMarker('Kor')">
+                        한식
+                    </li>
+                    <li id="YangMenu" onclick="changeMarker('Yang')">
+                        양식
+                    </li>
+                    <li id="ChaMenu" onclick="changeMarker('Cha')">
+                        중식
+                    </li>
+                    <li id="JpMenu" onclick="changeMarker('Jp')">
+                        일식
+                    </li>
+                    <li id="BoonMenu" onclick="changeMarker('Boon')">
+                        분식
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="creditpage.html">about us</a></li>
+                            <li><a href="#">our services</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get help</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <nav class="bottom-menu-bar">
+                        <a href="#" class="policy">개인정보처리방침</a>
+                        <a href="#" class="policy">홈페이지 이용약관</a>
+                        <a href="#" class="policy">위치정보 이용약관</a>
+                        <a href="#" class="policy">비회원 이용약관</a>
+                        <a href="#" class="policy">윤리경영 핫라인</a>
+                    </nav>
+                </div>
+                <div class="footer-copyright">
+                    <p>Copyright &copy;2023 Logo. All Rights Reserved. </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1338f9b05fd5c6cd3cf4998161f0e90f&libraries=services"></script>
+        <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
